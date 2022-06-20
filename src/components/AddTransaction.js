@@ -10,12 +10,14 @@ const AddTransaction = () => {
     const onSubmit = e => {
         e.preventDefault()
         const newTransaction = {
-            id: Math.floor(Math.random() * 100000000),
-            text: e.target[0].value,
-            amount: e.target[1].value
+            id: Math.floor(Math.random() * 100000000),  //or use UUID
+            text,
+            amount: parseInt(amount, 10)  // or amount: +amount
         }
-        console.log(newTransaction)
+        
         addTransaction(newTransaction)
+        setText("")
+        setAmount("")
     }
 
   return (
