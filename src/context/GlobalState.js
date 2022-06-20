@@ -9,8 +9,7 @@ const initialState = {
   { id: 2, text: 'Salary', amount: 300 },
   { id: 3, text: 'Book', amount: -10 },
   { id: 4, text: 'Camera', amount: 150 }
-]
-}
+]}
 
 //  Create Context
 // bringing this into other components
@@ -23,16 +22,14 @@ export const GlobalProvider = ( { children } ) => {
 
     //Actions
     const deleteTransaction = (id) => {
-        dispatch(
-            {type: 'DELETE_TRANSACTION', 
-            payload: id}
-        )
+        dispatch({
+            type: 'DELETE_TRANSACTION', 
+            payload: id
+        })
     }
 
-
-
     return (<GlobalContext.Provider value={{
-        transactions:state.transactions, 
+        transactions: state.transactions, 
         deleteTransaction
         }
     }>
